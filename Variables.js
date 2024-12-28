@@ -1,10 +1,37 @@
-let student1=new Object();
-student1.name= "abi"
-student1.age =20;
-console.log(student1)
 
-let stud2={
-    name:"abi",
-    age:20
+
+
+// callback example
+
+let a="abc";
+function one(callback)
+{  
+    setTimeout(()=>{
+        console.log(`file ${a} is progressing`);
+        callback();
+    },1000)
 }
-console.log(stud2)
+
+function two(callback)
+{
+    setTimeout(()=>{
+        console.log(`file ${a} is completed`);
+        callback();
+    },2000)
+}
+function complet()
+{
+    console.log('download completed');
+}
+one(()=>{
+    two(()=>{
+        complet(()=>{
+            
+        })
+    })
+})
+// // what is react // is react single page application or not what is single page application 
+// //(condition)?true:false==>ternary operator
+// 31/04/2024 -invalid
+// 29/02/2001 - valid3                                                                
+// ++++++
